@@ -11773,12 +11773,40 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Self-Driving-Car-Engineer-Nanodegree">Self-Driving Car Engineer Nanodegree<a class="anchor-link" href="#Self-Driving-Car-Engineer-Nanodegree">&#182;</a></h1><h2 id="Deep-Learning">Deep Learning<a class="anchor-link" href="#Deep-Learning">&#182;</a></h2><h2 id="Project:-Build-a-Traffic-Sign-Recognition-Classifier">Project: Build a Traffic Sign Recognition Classifier<a class="anchor-link" href="#Project:-Build-a-Traffic-Sign-Recognition-Classifier">&#182;</a></h2><p>In this notebook, a template is provided for you to implement your functionality in stages, which is required to successfully complete this project. If additional code is required that cannot be included in the notebook, be sure that the Python code is successfully imported and included in your submission if necessary.</p>
+<blockquote><p><strong>Note</strong>: Once you have completed all of the code implementations, you need to finalize your work by exporting the iPython Notebook as an HTML document. Before exporting the notebook to html, all of the code cells need to have been run so that reviewers can see the final implementation and output. You can then export the notebook by using the menu above and navigating to  \n",
+    "<strong>File -&gt; Download as -&gt; HTML (.html)</strong>. Include the finished document along with this notebook as your submission.</p>
+</blockquote>
+<p>In addition to implementing code, there is a writeup to complete. The writeup should be completed in a separate file, which can be either a markdown file or a pdf document. There is a <a href="https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md">write up template</a> that can be used to guide the writing process. Completing the code template and writeup template will cover all of the <a href="https://review.udacity.com/#!/rubrics/481/view">rubric points</a> for this project.</p>
+<p>The <a href="https://review.udacity.com/#!/rubrics/481/view">rubric</a> contains "Stand Out Suggestions" for enhancing the project beyond the minimum requirements. The stand out suggestions are optional. If you decide to pursue the "stand out suggestions", you can include the code in this Ipython notebook and also discuss the results in the writeup file.</p>
+<blockquote><p><strong>Note:</strong> Code and Markdown cells can be executed using the <strong>Shift + Enter</strong> keyboard shortcut. In addition, Markdown cells can be edited by typically double-clicking the cell to enter edit mode.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Step-0:-Load-The-Data">Step 0: Load The Data<a class="anchor-link" href="#Step-0:-Load-The-Data">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load pickled data</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
 
 <span class="c1"># TODO: Fill this in based on where you saved the training and testing data</span>
 
@@ -11803,12 +11831,43 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Step-1:-Dataset-Summary-&amp;-Exploration">Step 1: Dataset Summary &amp; Exploration<a class="anchor-link" href="#Step-1:-Dataset-Summary-&amp;-Exploration">&#182;</a></h2><p>The pickled data is a dictionary with 4 key/value pairs:</p>
+<ul>
+<li><code>'features'</code> is a 4D array containing raw pixel data of the traffic sign images, (num examples, width, height, channels).</li>
+<li><code>'labels'</code> is a 1D array containing the label/class id of the traffic sign. The file <code>signnames.csv</code> contains id -&gt; name mappings for each id.</li>
+<li><code>'sizes'</code> is a list containing tuples, (width, height) representing the original width and height the image.</li>
+<li><code>'coords'</code> is a list containing tuples, (x1, y1, x2, y2) representing coordinates of a bounding box around the sign in the image. <strong>THESE COORDINATES ASSUME THE ORIGINAL IMAGE. THE PICKLED DATA CONTAINS RESIZED VERSIONS (32 by 32) OF THESE IMAGES</strong></li>
+</ul>
+<p>Complete the basic data summary below. Use python, numpy and/or pandas methods to calculate the data summary rather than hard coding the results. For example, the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.shape.html">pandas shape method</a> might be useful for calculating some of the summary results.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Provide-a-Basic-Summary-of-the-Data-Set-Using-Python,-Numpy-and/or-Pandas">Provide a Basic Summary of the Data Set Using Python, Numpy and/or Pandas<a class="anchor-link" href="#Provide-a-Basic-Summary-of-the-Data-Set-Using-Python,-Numpy-and/or-Pandas">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Replace each question mark with the appropriate value. </span>
+<span class="c1">### Use python, pandas or numpy methods rather than hard coding the results</span>
+
+<span class="c1"># TODO: Number of training examples</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">X_valid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
@@ -11861,12 +11920,35 @@ Number of classes = 43
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Include-an-exploratory-visualization-of-the-dataset">Include an exploratory visualization of the dataset<a class="anchor-link" href="#Include-an-exploratory-visualization-of-the-dataset">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Visualize the German Traffic Signs Dataset using the pickled file(s). This is open ended, suggestions include: plotting traffic sign images, plotting the count of each sign, etc.</p>
+<p>The <a href="http://matplotlib.org/">Matplotlib</a> <a href="http://matplotlib.org/examples/index.html">examples</a> and <a href="http://matplotlib.org/gallery.html">gallery</a> pages are a great resource for doing visualizations in Python.</p>
+<p><strong>NOTE:</strong> It's recommended you start with something simple first. If you wish to do more, come back to it after you've completed the rest of the sections. It can be interesting to look at the distribution of classes in the training, validation and test set. Is the distribution the same? Are there more examples of some classes than others?</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Data exploration visualization code goes here.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="c1"># Visualizations will be shown in the notebook.</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
@@ -11905,75 +11987,68 @@ Number of classes = 43
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,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
-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
-AAAAAElFTkSuQmCC
+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
+TkSuQmCC
 "
 >
 </div>
@@ -11984,12 +12059,57 @@ AAAAAElFTkSuQmCC
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Step-2:-Design-and-Test-a-Model-Architecture">Step 2: Design and Test a Model Architecture<a class="anchor-link" href="#Step-2:-Design-and-Test-a-Model-Architecture">&#182;</a></h2><p>Design and implement a deep learning model that learns to recognize traffic signs. Train and test your model on the <a href="http://benchmark.ini.rub.de/?section=gtsrb&amp;subsection=dataset">German Traffic Sign Dataset</a>.</p>
+<p>The LeNet-5 implementation shown in the <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81">classroom</a> at the end of the CNN lesson is a solid starting point. You'll have to change the number of classes and possibly the preprocessing, but aside from that it's plug and play!</p>
+<p>With the LeNet-5 solution from the lecture, you should expect a validation set accuracy of about 0.89. To meet specifications, the validation set accuracy will need to be at least 0.93. It is possible to get an even higher accuracy, but 0.93 is the minimum for a successful project submission.</p>
+<p>There are various aspects to consider when thinking about this problem:</p>
+<ul>
+<li>Neural network architecture (is the network over or underfitting?)</li>
+<li>Play around preprocessing techniques (normalization, rgb to grayscale, etc)</li>
+<li>Number of examples per label (some have more than others).</li>
+<li>Generate fake data.</li>
+</ul>
+<p>Here is an example of a <a href="http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf">published baseline model on this problem</a>. It's not required to be familiar with the approach used in the paper but, it's good practice to try to read papers like these.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Pre-process-the-Data-Set-(normalization,-grayscale,-etc.)">Pre-process the Data Set (normalization, grayscale, etc.)<a class="anchor-link" href="#Pre-process-the-Data-Set-(normalization,-grayscale,-etc.)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Minimally, the image data should be normalized so that the data has mean zero and equal variance. For image data, <code>(pixel - 128)/ 128</code> is a quick way to approximately normalize the data and can be used in this project.</p>
+<p>Other pre-processing steps are optional. You can try different techniques to see if it improves performance.</p>
+<p>Use the code cell (or multiple code cells, if necessary) to implement the first step of your project.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Preprocess the data here. It is required to normalize the data. Other preprocessing steps could include </span>
+<span class="c1">### converting to grayscale, etc.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">myDictionary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">))</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -12146,7 +12266,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <span class="n">shuffle</span>
@@ -12192,10 +12312,11 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xv_gray</span> <span class="o">=</span> <span class="n">conversion</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#validation data</span>
+<span class="n">xv_gray</span> <span class="o">=</span> <span class="n">conversion</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
 <span class="n">xv_nor_gray</span> <span class="o">=</span> <span class="n">normalise</span><span class="p">(</span><span class="n">xv_gray</span><span class="p">)</span>
 </pre></div>
 
@@ -12206,10 +12327,11 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xt_gray</span> <span class="o">=</span> <span class="n">conversion</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#test data</span>
+<span class="n">xt_gray</span> <span class="o">=</span> <span class="n">conversion</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">xt_nor_gray</span> <span class="o">=</span> <span class="n">normalise</span><span class="p">(</span><span class="n">xt_gray</span><span class="p">)</span>
 </pre></div>
 
@@ -12220,7 +12342,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_nor_gray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -12235,7 +12357,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -12249,14 +12371,26 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-Architecture">Model Architecture<a class="anchor-link" href="#Model-Architecture">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Define your architecture here.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
 
-<span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">128</span>
 
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.layers</span> <span class="k">import</span> <span class="n">flatten</span>
@@ -12353,7 +12487,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
@@ -12369,7 +12503,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rate</span> <span class="o">=</span> <span class="mf">0.001</span>
@@ -12379,6 +12513,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 <span class="n">loss_operation</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">cross_entropy</span><span class="p">)</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">rate</span><span class="p">)</span>
 <span class="n">training_operation</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss_operation</span><span class="p">)</span>
+<span class="n">top5</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">top_k</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12388,7 +12523,7 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">correct_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">one_hot_y</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -12412,12 +12547,37 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Train,-Validate-and-Test-the-Model">Train, Validate and Test the Model<a class="anchor-link" href="#Train,-Validate-and-Test-the-Model">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A validation set can be used to assess how well the model is performing. A low accuracy on the training and validation
+sets imply underfitting. A high accuracy on the training set but low accuracy on the validation set implies overfitting.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Train your model here.</span>
+<span class="c1">### Calculate and report the accuracy on the training and validation set.</span>
+<span class="c1">### Once a final model architecture is selected, </span>
+<span class="c1">### the accuracy on the test set should be calculated and reported as well.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
     <span class="n">num_examples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_nor_gray</span><span class="p">)</span>
     
@@ -12455,20 +12615,24 @@ M+glqXEGvSQ17v8AVRRsFlnAAisAAAAASUVORK5CYII=
 <pre>Training...
 
 EPOCH 1 ...
-Validation Accuracy = 0.919
-training Accuracy = 0.940
+Validation Accuracy = 0.884
+training Accuracy = 0.912
 
 EPOCH 2 ...
+Validation Accuracy = 0.917
+training Accuracy = 0.961
+
+EPOCH 3 ...
 Validation Accuracy = 0.939
 training Accuracy = 0.976
 
-EPOCH 3 ...
-Validation Accuracy = 0.952
-training Accuracy = 0.983
-
 EPOCH 4 ...
-Validation Accuracy = 0.964
-training Accuracy = 0.989
+Validation Accuracy = 0.954
+training Accuracy = 0.984
+
+EPOCH 5 ...
+Validation Accuracy = 0.954
+training Accuracy = 0.987
 
 Model saved
 </pre>
@@ -12481,7 +12645,7 @@ Model saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
@@ -12503,7 +12667,7 @@ Model saved
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test Accuracy = 0.943
+<pre>Test Accuracy = 0.937
 </pre>
 </div>
 </div>
@@ -12512,12 +12676,24 @@ Model saved
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Step-3:-Test-a-Model-on-New-Images">Step 3: Test a Model on New Images<a class="anchor-link" href="#Step-3:-Test-a-Model-on-New-Images">&#182;</a></h2><p>To give yourself more insight into how your model is working, download at least five pictures of German traffic signs from the web and use your model to predict the traffic sign type.</p>
+<p>You may find <code>signnames.csv</code> useful as it contains mappings from the class id (integer) to the actual sign name.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datanew</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CarND-Traffic-Sign-Classifier-Project/signnames.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datanew</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;signnames.csv&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12525,542 +12701,23 @@ Model saved
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datanew</span>
-</pre></div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Load-and-Output-the-Images">Load and Output the Images<a class="anchor-link" href="#Load-and-Output-the-Images">&#182;</a></h3>
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[62]:</div>
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ClassId</th>
-      <th>SignName</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>Speed limit (20km/h)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>Speed limit (30km/h)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>Speed limit (50km/h)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>Speed limit (60km/h)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>Speed limit (70km/h)</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>Speed limit (80km/h)</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>End of speed limit (80km/h)</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>7</td>
-      <td>Speed limit (100km/h)</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>8</td>
-      <td>Speed limit (120km/h)</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>9</td>
-      <td>No passing</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>10</td>
-      <td>No passing for vehicles over 3.5 metric tons</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>11</td>
-      <td>Right-of-way at the next intersection</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>12</td>
-      <td>Priority road</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>13</td>
-      <td>Yield</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>14</td>
-      <td>Stop</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>15</td>
-      <td>No vehicles</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>16</td>
-      <td>Vehicles over 3.5 metric tons prohibited</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>17</td>
-      <td>No entry</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>18</td>
-      <td>General caution</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>19</td>
-      <td>Dangerous curve to the left</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>20</td>
-      <td>Dangerous curve to the right</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>21</td>
-      <td>Double curve</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>22</td>
-      <td>Bumpy road</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>23</td>
-      <td>Slippery road</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>24</td>
-      <td>Road narrows on the right</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>25</td>
-      <td>Road work</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>26</td>
-      <td>Traffic signals</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>27</td>
-      <td>Pedestrians</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>28</td>
-      <td>Children crossing</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>29</td>
-      <td>Bicycles crossing</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>30</td>
-      <td>Beware of ice/snow</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>31</td>
-      <td>Wild animals crossing</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>32</td>
-      <td>End of all speed and passing limits</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>33</td>
-      <td>Turn right ahead</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>34</td>
-      <td>Turn left ahead</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>35</td>
-      <td>Ahead only</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>36</td>
-      <td>Go straight or right</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>37</td>
-      <td>Go straight or left</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>38</td>
-      <td>Keep right</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>39</td>
-      <td>Keep left</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>40</td>
-      <td>Roundabout mandatory</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>41</td>
-      <td>End of no passing</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>42</td>
-      <td>End of no passing by vehicles over 3.5 metric ...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;5_examples/1.png&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[65]:</div>
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x7f87de0c12b0&gt;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[66]:</div>
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(105, 120, 4)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">PIL</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them here.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+<span class="kn">import</span> <span class="nn">PIL</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="c1">#os.listdir(&quot;5_examples/&quot;)</span>
@@ -13077,7 +12734,7 @@ ISckIURgyAlJCBEYckISQgSGnJCEEIEhJyQhRGD8P6+Nn1XFdqodAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -13585,13 +13242,13 @@ rkJggg==
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x7f87dd55cb70&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x7f8826b94438&gt;</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[126]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -13607,104 +13264,7 @@ rkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imglist</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">image</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">image</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">image</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">image</span><span class="p">[:,:,</span><span class="mi">3</span><span class="p">])</span><span class="o">/</span><span class="mi">4</span>
-<span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-<span class="c1">#plt.imshow(image)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[127]:</div>
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(32, 32)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[128]:</div>
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(32, 32, 1)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[110]:</div>
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(32, 32)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13743,7 +13303,7 @@ rkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">imglist1</span> <span class="o">=</span> <span class="n">conversion1</span><span class="p">(</span><span class="n">imglist</span><span class="p">)</span>
@@ -13757,7 +13317,7 @@ rkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">web_elp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">imglist2</span><span class="p">)</span>
@@ -13773,7 +13333,7 @@ rkJggg==
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[131]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13789,7 +13349,7 @@ rkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_label</span> <span class="o">=</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
@@ -13801,12 +13361,24 @@ rkJggg==
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Predict-the-Sign-Type-for-Each-Image">Predict the Sign Type for Each Image<a class="anchor-link" href="#Predict-the-Sign-Type-for-Each-Image">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Run the predictions here and use the model to output the prediction for each image.</span>
+<span class="c1">### Make sure to pre-process the images with the same pre-processing pipeline used earlier.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
     <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">web_elp</span><span class="p">,</span> <span class="n">y_label</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;web images Accuracy = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_accuracy</span><span class="p">))</span>
@@ -13833,12 +13405,211 @@ rkJggg==
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Analyze-Performance">Analyze Performance<a class="anchor-link" href="#Analyze-Performance">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Calculate the accuracy for these 5 new images. </span>
+<span class="c1">### For example, if the model predicted 1 out of 5 signs correctly, it&#39;s 20% accurate on these new images.</span>
+<span class="n">topnnk</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">top_k</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+<span class="c1">#    sess.run(tf.nn.top_k(logits, k=5), feed_dict={x: web_elp})</span>
+<span class="k">def</span> <span class="nf">topk</span><span class="p">(</span><span class="n">xdata</span><span class="p">):</span>
+    <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_default_session</span><span class="p">()</span>
+    <span class="n">new</span><span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">topnnk</span><span class="p">,</span> <span class="n">feed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">new</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+    <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+    <span class="n">top5</span> <span class="o">=</span> <span class="n">topk</span><span class="p">(</span><span class="n">web_elp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">top5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>TopKV2(values=array([[ 4.2085557 ,  2.198102  ,  0.6602273 ,  0.63596392,  0.44511583],
+       [ 4.49836779,  2.28250408,  0.78534627,  0.60961586,  0.36356992],
+       [ 4.42697573,  2.46313977,  0.84863198,  0.62063622,  0.51212281],
+       [ 4.10135269,  2.31999516,  0.72794324,  0.54170352,  0.46299338],
+       [ 4.14025354,  2.27642918,  1.03525686,  0.59936792,  0.51731884]], dtype=float32), indices=array([[12, 40, 17, 18,  5],
+       [12, 40,  5, 17, 18],
+       [12, 40, 17,  5, 18],
+       [12, 40, 17,  5, 18],
+       [12, 40, 17, 18,  5]], dtype=int32))
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Output-Top-5-Softmax-Probabilities-For-Each-Image-Found-on-the-Web">Output Top 5 Softmax Probabilities For Each Image Found on the Web<a class="anchor-link" href="#Output-Top-5-Softmax-Probabilities-For-Each-Image-Found-on-the-Web">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For each of the new images, print out the model's softmax probabilities to show the <strong>certainty</strong> of the model's predictions (limit the output to the top 5 probabilities for each image). <a href="https://www.tensorflow.org/versions/r0.12/api_docs/python/nn.html#top_k"><code>tf.nn.top_k</code></a> could prove helpful here.</p>
+<p>The example below demonstrates how tf.nn.top_k can be used to find the top k predictions for each image.</p>
+<p><code>tf.nn.top_k</code> will return the values and indices (class ids) of the top k predictions. So if k=3, for each sign, it'll return the 3 largest probabilities (out of a possible 43) and the correspoding class ids.</p>
+<p>Take this numpy array as an example. The values in the array represent predictions. The array contains softmax probabilities for five candidate images with six possible classes. <code>tk.nn.top_k</code> is used to choose the three classes with the highest probability:</p>
+
+<pre><code># (5, 6) array
+a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
+         0.12789202],
+       [ 0.28086119,  0.27569815,  0.08594638,  0.0178669 ,  0.18063401,
+         0.15899337],
+       [ 0.26076848,  0.23664738,  0.08020603,  0.07001922,  0.1134371 ,
+         0.23892179],
+       [ 0.11943333,  0.29198961,  0.02605103,  0.26234032,  0.1351348 ,
+         0.16505091],
+       [ 0.09561176,  0.34396535,  0.0643941 ,  0.16240774,  0.24206137,
+         0.09155967]])</code></pre>
+<p>Running it through <code>sess.run(tf.nn.top_k(tf.constant(a), k=3))</code> produces:</p>
+
+<pre><code>TopKV2(values=array([[ 0.34763842,  0.24879643,  0.12789202],
+       [ 0.28086119,  0.27569815,  0.18063401],
+       [ 0.26076848,  0.23892179,  0.23664738],
+       [ 0.29198961,  0.26234032,  0.16505091],
+       [ 0.34396535,  0.24206137,  0.16240774]]), indices=array([[3, 0, 5],
+       [0, 1, 4],
+       [0, 5, 1],
+       [1, 3, 5],
+       [1, 4, 3]], dtype=int32))</code></pre>
+<p>Looking just at the first row we get <code>[ 0.34763842,  0.24879643,  0.12789202]</code>, you can confirm these are the 3 largest probabilities in <code>a</code>. You'll also notice <code>[3, 0, 5]</code> are the corresponding indices.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web. </span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Project-Writeup">Project Writeup<a class="anchor-link" href="#Project-Writeup">&#182;</a></h3><p>Once you have completed the code implementation, document your results in a project writeup using this <a href="https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md">template</a> as a guide. The writeup can be in a markdown or pdf file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p><strong>Note</strong>: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  \n",
+    "<strong>File -&gt; Download as -&gt; HTML (.html)</strong>. Include the finished document along with this notebook as your submission.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Step-4-(Optional):-Visualize-the-Neural-Network's-State-with-Test-Images">Step 4 (Optional): Visualize the Neural Network's State with Test Images<a class="anchor-link" href="#Step-4-(Optional):-Visualize-the-Neural-Network's-State-with-Test-Images">&#182;</a></h2><p>This Section is not required to complete but acts as an additional excersise for understaning the output of a neural network's weights. While neural networks can be a great learning device they are often referred to as a black box. We can understand what the weights of a neural network look like better by plotting their feature maps. After successfully training your neural network you can see what it's feature maps look like by plotting the output of the network's weight layers in response to a test stimuli image. From these plotted feature maps, it's possible to see what characteristics of an image the network finds interesting. For a sign, maybe the inner network feature maps react with high activation to the sign's boundary outline or to the contrast in the sign's painted symbol.</p>
+<p>Provided for you below is the function code that allows you to get the visualization output of any tensorflow weight layer you want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the tensorflow variable name that represents the layer's state during the training process, for instance if you wanted to see what the <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81">LeNet lab's</a> feature maps looked like for it's second convolutional layer you could enter conv2 as the tf_activation variable.</p>
+<p>For an example of what feature map outputs look like, check out NVIDIA's results in their paper <a href="https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/">End-to-End Deep Learning for Self-Driving Cars</a> in the section Visualization of internal CNN State. NVIDIA was able to show that their network's inner weights had high activations to road boundary lines by comparing feature maps from an image with a clear path to one without. Try experimenting with a similar test to show that your trained network's weights are looking for interesting features, whether it's looking at differences in feature maps from images with or without a sign, or even what feature maps look like in a trained network vs a completely untrained one on the same sign image.</p>
+<p><figure>
+ <img src="visualize_cnn.png" width="380" alt="Combined Image" />
+ <figcaption>
+ <p></p> 
+ <p style="text-align: center;"> Your output should look something like this (above)</p> 
+ </figcaption>
+</figure>
+ <p></p></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Visualize your network&#39;s feature maps here.</span>
+<span class="c1">### Feel free to use as many code cells as needed.</span>
+
+<span class="c1"># image_input: the test image being fed into the network to produce the feature maps</span>
+<span class="c1"># tf_activation: should be a tf variable name used during your training procedure that represents the calculated state of a specific weight layer</span>
+<span class="c1"># activation_min/max: can be used to view the activation contrast in more detail, by default matplot sets min and max to the actual min and max values of the output</span>
+<span class="c1"># plt_num: used to plot out multiple different weight feature map sets on the same block, just extend the plt number for each new feature map entry</span>
+
+<span class="k">def</span> <span class="nf">outputFeatureMap</span><span class="p">(</span><span class="n">image_input</span><span class="p">,</span> <span class="n">tf_activation</span><span class="p">,</span> <span class="n">activation_min</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation_max</span><span class="o">=-</span><span class="mi">1</span> <span class="p">,</span><span class="n">plt_num</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Here make sure to preprocess your image_input in a way your network expects</span>
+    <span class="c1"># with size, normalization, ect if needed</span>
+    <span class="c1"># image_input =</span>
+    <span class="c1"># Note: x should be the same name as your network&#39;s tensorflow data placeholder variable</span>
+    <span class="c1"># If you get an error tf_activation is not defined it may be having trouble accessing the variable from inside a function</span>
+    <span class="n">activation</span> <span class="o">=</span> <span class="n">tf_activation</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">sess</span><span class="p">,</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">image_input</span><span class="p">})</span>
+    <span class="n">featuremaps</span> <span class="o">=</span> <span class="n">activation</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">plt_num</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">featuremap</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">featuremaps</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="n">featuremap</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># sets the number of feature maps to show on each row and column</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FeatureMap &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">featuremap</span><span class="p">))</span> <span class="c1"># displays the feature map number</span>
+        <span class="k">if</span> <span class="n">activation_min</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;</span> <span class="n">activation_max</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">activation</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,</span> <span class="n">featuremap</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span><span class="n">activation_min</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">activation_max</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">activation_max</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">activation</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,</span> <span class="n">featuremap</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">activation_max</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">activation_min</span> <span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">activation</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,</span> <span class="n">featuremap</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">activation_min</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">activation</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,</span> <span class="n">featuremap</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
